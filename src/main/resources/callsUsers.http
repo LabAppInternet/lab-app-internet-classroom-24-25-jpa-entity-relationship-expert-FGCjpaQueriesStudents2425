@@ -1,0 +1,34 @@
+###
+GET http://localhost:8080/api/users
+
+###
+GET http://localhost:8080/api/users/joanra/asDTO
+
+###
+GET http://localhost:8080/api/users/joanra/asInterface
+
+###
+GET http://localhost:8080/api/users/tina/asDTO
+
+###
+GET http://localhost:8080/api/users/name/Cristina/secondName/Garcia
+
+### unexisting user
+GET http://localhost:8080/api/users/pepe/asDTO
+
+### unexisting user
+GET http://localhost:8080/api/users/pepe/asInterface
+
+###
+PUT http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "username": "tina",
+  "name": "Pepet",
+  "secondName": "Pepet",
+  "email": "pepet@teconampus.cat"
+}
+
+###
+GET http://localhost:8080/api/users/popular/dayOfWeek

@@ -1,0 +1,44 @@
+###
+GET http://localhost:8080/api/users/tina/friends
+
+
+###
+GET http://localhost:8080/api/users/friends
+
+###
+POST http://localhost:8080/api/users/friends
+Content-Type: application/json
+
+{
+  "username": "joanra",
+  "friends": [
+    "manel",
+    "anna",
+    "clara",
+    "maria"
+  ]
+}
+
+### incorrect: empty list of friends and user id with capital letter.
+POST http://localhost:8080/api/users/friends
+Content-Type: application/json
+
+{
+  "username": "Joanra",
+  "friends": []
+}
+
+### user does not exist
+POST http://localhost:8080/api/users/friends
+Content-Type: application/json
+
+{
+  "username": "xoanra",
+  "friends": ["hola"]
+}
+
+###
+GET http://localhost:8080/api/users/topFriends
+
+###
+GET http://localhost:8080/api/users/friends/pepa

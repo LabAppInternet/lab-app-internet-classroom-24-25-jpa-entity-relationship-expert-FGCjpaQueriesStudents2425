@@ -1,0 +1,64 @@
+
+###
+GET http://localhost:8080/api/users/joanra/withFavoriteJourneys
+
+###
+GET http://localhost:8080/api/users/tina/favoriteJourneys
+
+###
+GET http://localhost:8080/api/users/tina/domainFavoriteJourneys
+
+###
+GET http://localhost:8080/api/users/joanra/favoriteJourneys
+
+###
+GET http://localhost:8080/api/users/joanra/domainFavoriteJourneys
+
+###
+POST http://localhost:8080/api/users/joanra/favoriteJourney
+Content-Type: application/json
+
+{
+  "origin": "Alcoletge",
+  "destination": "Lleida-Pirineus",
+  "dayTimes": [
+    {"dayOfWeek" : "Friday",
+      "time" : "12:50"},
+    {"dayOfWeek" : "Tuesday",
+      "time" : "13:50"}
+  ]
+}
+
+### same origin and destination
+POST http://localhost:8080/api/users/joanra/favoriteJourney
+Content-Type: application/json
+
+{
+  "origin": "Alcoletge",
+  "destination": "Alcoletge",
+  "dayTimes": [
+    {"dayOfWeek" : "Monday",
+      "time" : "12:50"},
+    {"dayOfWeek" : "Tuesday",
+      "time" : "13:50"}
+  ]
+}
+
+### station name too short
+POST http://localhost:8080/api/users/joanra/favoriteJourney
+Content-Type: application/json
+
+{
+  "origin": "Ll",
+  "destination": "Al",
+  "dayTimes": [
+    {"dayOfWeek" : "onday",
+      "time" : "12:0"},
+    {"dayOfWeek" : "Tuesday",
+      "time" : "a3:50"}
+  ]
+}
+
+###
+GET http://localhost:8080/api/users/topFavoriteJourney
+

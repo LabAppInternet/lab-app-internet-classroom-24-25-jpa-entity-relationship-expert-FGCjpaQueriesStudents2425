@@ -1,0 +1,13 @@
+###
+GET http://localhost:8080/api/journeys/dto
+
+###
+GET http://localhost:8080/api/journeys/domain
+
+###
+GET http://localhost:8080/api/journeys/origin/Balaguer/destination/Gerb
+
+###
+GET http://localhost:8080/api/journeys/id/origin/Balaguer/destination/Gerb
+
+

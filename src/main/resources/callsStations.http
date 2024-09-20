@@ -1,0 +1,15 @@
+###
+GET http://localhost:8080/api/stations
+
+###
+GET http://localhost:8080/api/stations/domain
+
+###
+GET http://localhost:8080/api/stations/La Pobla de Segur
+
+### unexisting station
+GET http://localhost:8080/api/stations/Unexisting station
+
+###
+GET http://localhost:8080/api/stations/topFavoriteJourney
+
