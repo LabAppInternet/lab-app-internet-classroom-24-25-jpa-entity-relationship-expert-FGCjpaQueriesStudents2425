@@ -1,6 +1,7 @@
 package cat.tecnocampus.fgcstations.application.mapper;
 
 import cat.tecnocampus.fgcstations.application.DTOs.*;
+import cat.tecnocampus.fgcstations.application.exception.UserDoesNotExistsException;
 import cat.tecnocampus.fgcstations.domain.*;
 
 import java.util.ArrayList;
@@ -33,6 +34,8 @@ public class MapperHelper {
     }
 
     public static UserFriendsDTO listOfAUserFriendsToUserFriendsDTO(List<Friend> friends) {
+        if (friends.isEmpty()) throw new UserDoesNotExistsException("Empty list of friends");
+
         UserFriendsDTO uf = new UserFriendsDTO();
         uf.setUsername(friends.get(0).getUsername());
         uf.setFriends(friends.stream().map(Friend::getFriend).toList());
