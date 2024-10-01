@@ -24,8 +24,8 @@ public class FgcFriendService {
 
     public UserFriendsDTO getUserFriends(String username) {
         // TODO 20: find all the friends of a user given her username. You can solve this exercise without any sql query
-        List<Friend> friends = friendRepository.findAllByUserUsername(username);
-        return MapperHelper.listOfAUserFriendsToUserFriendsDTO(friends);
+        return MapperHelper.listOfAUserFriendsToUserFriendsDTO(friendRepository.findAllByUserUsername(username));
+
     }
 
     public List<UserFriendsDTO> getAllUserFriends() {

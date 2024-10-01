@@ -12,7 +12,9 @@ import java.util.Optional;
 public interface StationRepository extends JpaRepository<Station, String> {
 
     List<StationDTO> findAllDTOBy();
+
     Optional<Station> findByName(String name);
+
     Optional<StationDTO> findDTOByName(String name);
 
     @Query(value = "SELECT s.name as name, count(j.id) as count FROM station s " +
